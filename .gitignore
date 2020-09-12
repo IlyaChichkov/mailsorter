@@ -1,0 +1,13 @@
+/Temp/
+/UserSettings/
+/ProjectSettings/
+/Packages/
+/obj/
+/Logs/
+/Library/
+/Assets/Animations/
+/Assets/Images/
+/Assets/Prefabs/
+/Assets/Scenes/
+/Assets/Tilemaps/
+*.meta
