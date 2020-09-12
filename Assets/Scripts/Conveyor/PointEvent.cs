@@ -30,7 +30,7 @@ public class PointEvent : MonoBehaviour
         if((int)triggerObject.GetComponent<MailMarker>().markerColor == (int)color){
             Debug.Log("Right delivery");
         }else{
-            Debug.Log("Wrong delivery");
+            Debug.Log("Wrong delivery done");
         }
         triggerObject.GetComponent<Animator>().SetBool("Destroyed", true);
     }
