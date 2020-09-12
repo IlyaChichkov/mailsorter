@@ -24,11 +24,13 @@ public class SpawnManage : MonoBehaviour
 
     private IEnumerator SpawnMailTimer()
     {
-        while (isSpawning)
+        while (true)
         {
             yield return new WaitForSeconds(mailSpawnPeriod);
 
+            if(isSpawning){
             SpawnMail();
+            }
         }
     }
 
