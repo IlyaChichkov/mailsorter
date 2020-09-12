@@ -8,6 +8,7 @@ public class AllPointsParent : MonoBehaviour
     public List<string> avaliableLevelPointsColors = new List<string>();
     public Tilemap conveyorTilemap;
 
+    public Tilemap conveyorTilem2ap;
     public void ChangeTileDirection(Vector2 position, int angle)
     {
         var cellPosition = conveyorTilemap.WorldToCell(position);
