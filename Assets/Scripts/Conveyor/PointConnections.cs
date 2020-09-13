@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PointConnections : MonoBehaviour
 {
-    private Transform[] connections = new Transform[4];
+    public Transform[] connections = new Transform[4];
     public Transform topConnection;
     public Transform downConnection;
     public Transform leftConnection;

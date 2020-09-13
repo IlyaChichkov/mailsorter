@@ -52,5 +52,7 @@ public class SpawnManage : MonoBehaviour
         var levelColors = transform.parent.gameObject.GetComponent<AllPointsParent>().avaliableLevelPointsColors;
         var mailMarkerColor = levelColors[Random.Range(0, levelColors.Count)];
         System.Enum.TryParse(mailMarkerColor, out mailCopy.GetComponent<MailMarker>().markerColor);
+        // задаем награды за посылку
+        mailCopy.GetComponent<MailRewards>().SetMailSpecificReward();
     }
 }

@@ -38,12 +38,16 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Conveyor\PointEvent.cs" />
      <Compile Include="Assets\Scripts\Conveyor\PointConnections.cs" />
+     <Compile Include="Assets\Scripts\Conveyor\AllPointsParent.cs" />
+     <Compile Include="Assets\Scripts\Conveyor\FindMailPath.cs" />
+     <Compile Include="Assets\Scripts\MailBox\MailMarker.cs" />
      <Compile Include="Assets\Scripts\Conveyor\MailboxMovement.cs" />
      <Compile Include="Assets\Scripts\MailBox\DestroyBox.cs" />
      <Compile Include="Assets\Scripts\Conveyor\SpawnManage.cs" />
-     <Compile Include="Assets\Scripts\Conveyor\AllPointsParent.cs" />
-     <Compile Include="Assets\Scripts\MailBox\MailMarker.cs" />
      <Compile Include="Assets\Scripts\UserControls\CameraControl.cs" />
+     <Compile Include="Assets\Scripts\Economy\PlayerResources.cs" />
+     <Compile Include="Assets\Scripts\Economy\LevelTime.cs" />
+     <Compile Include="Assets\Scripts\MailBox\MailRewards.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:/Programms/Unity/2020.1.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

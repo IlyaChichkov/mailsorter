@@ -29,8 +29,11 @@ public class PointEvent : MonoBehaviour
     private void MailEndPoint(){
         if((int)triggerObject.GetComponent<MailMarker>().markerColor == (int)color){
             Debug.Log("Right delivery");
+            PlayerResources.ChangeMoney(triggerObject.GetComponent<MailRewards>().moneyReward);
+            PlayerResources.ChangeRP(triggerObject.GetComponent<MailRewards>().researchPointReward);
         }else{
             Debug.Log("Wrong delivery");
+            PlayerResources.ChangeMoney(-triggerObject.GetComponent<MailRewards>().moneyReward / 2);
         }
         triggerObject.GetComponent<Animator>().SetBool("Destroyed", true);
     }
