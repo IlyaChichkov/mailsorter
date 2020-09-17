@@ -17,6 +17,9 @@ public class PointConnections : MonoBehaviour
 
     void Start()
     {
+        // округляем координаты точки (себя)
+        transform.position = new Vector3(Mathf.Round(transform.position.x*10)/10, Mathf.Round(transform.position.y*10)/10, transform.position.z);
+
         if (canChangeDirection)
         {
             // задаем массив соединенных точек

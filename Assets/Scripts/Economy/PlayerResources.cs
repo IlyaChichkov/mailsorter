@@ -41,6 +41,9 @@ public class PlayerResources : MonoBehaviour
         if(resourcesScript.Money < -15){ // БАНКРОТ
             SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         }
+
+        // Задание по сбору денег
+        LevelGoals.ChangeGoalValue(GoalType.get_money, true, resourcesScript.Money);
     }
 
     // изменение ResearchPoints
