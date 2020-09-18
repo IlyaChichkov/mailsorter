@@ -39,7 +39,7 @@ public class PlayerResources : MonoBehaviour
         resourcesScript.moneyText.text = resourcesScript.Money.ToString();
         
         if(resourcesScript.Money < -15){ // БАНКРОТ
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+             SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         }
 
         // Задание по сбору денег

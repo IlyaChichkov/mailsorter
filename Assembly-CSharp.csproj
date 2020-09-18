@@ -49,10 +49,13 @@
      <Compile Include="Assets\Scripts\MailBox\DestroyBox.cs" />
      <Compile Include="Assets\Scripts\MailBox\MailRewards.cs" />
      <Compile Include="Assets\Scripts\LevelGoals\Goal.cs" />
+     <Compile Include="Assets\Scripts\LevelGoals\LevelGoals.cs" />
      <Compile Include="Assets\Scripts\Conveyor\SpawnManage.cs" />
      <Compile Include="Assets\Scripts\Economy\LevelScore.cs" />
      <Compile Include="Assets\Scripts\UserControls\CameraControl.cs" />
-     <Compile Include="Assets\Scripts\LevelGoals\LevelGoals.cs" />
+     <Compile Include="Assets\Scripts\UpgradesMenu\UpgradesList.cs" />
+     <Compile Include="Assets\Scripts\UpgradesMenu\Upgrade.cs" />
+     <Compile Include="Assets\Scripts\UpgradesMenu\UpgradesView.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:/Programms/Unity/2020.1.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

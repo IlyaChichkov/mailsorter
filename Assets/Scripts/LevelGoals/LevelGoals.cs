@@ -12,18 +12,17 @@ public class LevelGoals : MonoBehaviour
     void Start()
     {
         _levelGoals = this;
-    }
-
-    void Update()
-    {
+        
         CheckGoals();
         SetGoalsText();
     }
 
-    public static void ChangeGoalValue(GoalType type, bool setValue, float amount)
+
+    // изменяем значение цели
+    public static void ChangeGoalValue(GoalType type, bool setValue, float amount) // если setValue = false, то значение не устанавливается, а прибавляется
     {
         Goal goal = GetGoalWithType(type);
-        
+
         if (goal != null)
         {
             if(setValue){
@@ -31,9 +30,12 @@ public class LevelGoals : MonoBehaviour
             }else{
                 goal.currentValue += amount;
             }
+            _levelGoals.SetGoalsText();
+            _levelGoals.CheckGoals();
         }
     }
 
+    // находим цель с нужным типом задания (если такая есть)
     private static Goal GetGoalWithType(GoalType type)
     {
         foreach (Goal goal in _levelGoals.goals)
@@ -46,6 +48,7 @@ public class LevelGoals : MonoBehaviour
         return null;
     }
 
+    // прописываем текст заданий в таблице
     private void SetGoalsText()
     {
         int goalNum = 0;
@@ -67,6 +70,8 @@ public class LevelGoals : MonoBehaviour
             goalNum++;
         }
     }
+
+    // проверяем готовность задания
     public void CheckGoals()
     {
         int goalNum = 0;
