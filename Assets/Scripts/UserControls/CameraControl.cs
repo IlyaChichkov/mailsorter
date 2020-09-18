@@ -40,7 +40,8 @@ public class CameraControl : MonoBehaviour
             float dragSpeed = Vector2.Distance(mouseStartPos, mousePos) / 300;
             var curPos = transform.position;
 
-            if(Vector2.Distance(mouseStartPos, mousePos) < 1){
+            if (Vector2.Distance(mouseStartPos, mousePos) < 1)
+            {
                 dragSpeed *= 1.5f;
             }
             // находим позицию в которую мы собираемся переместиться
@@ -70,7 +71,7 @@ public class CameraControl : MonoBehaviour
 
             topRight = new Vector2(topRightNewX, topRightNewY);
             // проверяем не будем выходить ли мы за допустимые границы
-            if (bottomLeft.x > leftDownCorner.position.x  && topRight.x < rightTopCorner.position.x)
+            if (bottomLeft.x > leftDownCorner.position.x && topRight.x < rightTopCorner.position.x)
             {
                 transform.position = new Vector3(newXposition, transform.position.y, curPos.z);
             }
@@ -85,22 +86,36 @@ public class CameraControl : MonoBehaviour
 
     private void TransformToAvalbleBound()
     {
+        // вычисляем изменение нижней левой границы (для данной ширины камеры)
+        Vector2 bottomLeft = Camera.main.ScreenToWorldPoint(new Vector2(0, 0));
+
+        // вычисляем изменение верхней правой границы (для данной ширины камеры)
+        float cameraWidth = Camera.main.pixelWidth;
+        float cameraHeight = Camera.main.pixelHeight;
+
+        Vector2 topRight = Camera.main.ScreenToWorldPoint(new Vector2(cameraWidth, cameraHeight));
+
+        float moveBY = Mathf.Abs(leftDownCorner.position.y - bottomLeft.y);
+        float moveBX = Mathf.Abs(leftDownCorner.position.x - bottomLeft.x);
+
+        float moveTY = Mathf.Abs(rightTopCorner.position.y - topRight.y);
+        float moveTX = Mathf.Abs(rightTopCorner.position.x - topRight.x);
         // если мы за границами, то перемещаемся к границе
-        if (transform.position.x < leftDownCorner.position.x)
+        if (bottomLeft.x < leftDownCorner.position.x)
         {
-            transform.position = new Vector3(leftDownCorner.position.x, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + moveBX, transform.position.y, transform.position.z);
         }
-        if (transform.position.y < leftDownCorner.position.y)
+        if (bottomLeft.y < leftDownCorner.position.y)
         {
-            transform.position = new Vector3(transform.position.x, leftDownCorner.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y + moveBY, transform.position.z);
         }
-        if (transform.position.x > rightTopCorner.position.x)
+        if (topRight.x > rightTopCorner.position.x)
         {
-            transform.position = new Vector3(rightTopCorner.position.x, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x - moveTX, transform.position.y, transform.position.z);
         }
-        if (transform.position.y > rightTopCorner.position.y)
+        if (topRight.y > rightTopCorner.position.y)
         {
-            transform.position = new Vector3(transform.position.x, rightTopCorner.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y - moveTY, transform.position.z);
         }
     }
 }
