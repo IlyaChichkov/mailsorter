@@ -42,6 +42,7 @@
      <Compile Include="Assets\Scripts\Conveyor\PointConnections.cs" />
      <Compile Include="Assets\Scripts\Conveyor\AllPointsParent.cs" />
      <Compile Include="Assets\Scripts\Conveyor\FindMailPath.cs" />
+     <Compile Include="Assets\Scripts\UpgradesMenu\UpgradesView.cs" />
      <Compile Include="Assets\Scripts\MailBox\MailMarker.cs" />
      <Compile Include="Assets\Scripts\MailBox\BombDestroy.cs" />
      <Compile Include="Assets\Scripts\LevelGoals\GoalsView.cs" />
@@ -55,7 +56,6 @@
      <Compile Include="Assets\Scripts\UserControls\CameraControl.cs" />
      <Compile Include="Assets\Scripts\UpgradesMenu\UpgradesList.cs" />
      <Compile Include="Assets\Scripts\UpgradesMenu\Upgrade.cs" />
-     <Compile Include="Assets\Scripts\UpgradesMenu\UpgradesView.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:/Programms/Unity/2020.1.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
